@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+.Heading{
+  margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Acme', sans-serif;
+    color: rgb(23, 117, 4);
+    /* display: inline; */
+    /* background-color: ; */
+    
+}
+
+    .rotate {
+        animation: rotation 12s infinite linear;
+      }
+      
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+.Cards{
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
+.Option{
+  margin-bottom: 40px;
+}
+.OptionHeading{
+  font-size: 30px;
+  color: rgb(28, 61, 21);
+  margin-bottom: 30px;
+}
+.Select{
+  width: 50%;
+}

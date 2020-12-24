@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import Crads from './component/Cards';
+import Header from './component/Header';
+import Options from './component/Option';
+import Table from './component/Table';
+import {countryData} from './component/Api'
 
-function App() {
+
+function App(){
+
+const [CountryData, setCountryData] = useState('');
+  const country = async(data) => {
+  const res = await countryData(data);
+  setCountryData(res);
+  console.log("My country data is here and .... ",CountryData);
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div className="container">
+   <Header/>
+<Crads  data={CountryData}/>
+<Options country={country}/>
+<Table  data1={CountryData}/>
+    </div></div>);
+    
+  
 }
 
 export default App;
