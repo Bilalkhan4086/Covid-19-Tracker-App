@@ -4,11 +4,11 @@ import { allCountries} from './Api';
 
 const Options = ({country}) => {
   const [myData, setmyData] = useState('');
-  useEffect(()=>async() => {
+
+  useEffect(()=>{const getData = async() => {
       const data = await allCountries();
-      setmyData(data)
-      country();
-  },[])
+      setmyData(data);
+  }; getData()},[])
 
     return (
         <div className="Option">

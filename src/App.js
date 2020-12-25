@@ -10,12 +10,15 @@ import {countryData} from './component/Api'
 function App(){
 
 const [CountryData, setCountryData] = useState('');
-  const country = async(data) => {
-  const res = await countryData(data);
-  setCountryData(res);
-  console.log("My country data is here and .... ",CountryData);
-}
 
+const country = async(data) => {
+const res = await countryData(data);
+      setCountryData(res);
+      console.log("My country data is here and .... ",CountryData);    
+ }
+ window.addEventListener('load', function () {
+  country();
+}, false);
   return (
     <div className="App">
     <div className="container">
